@@ -1,37 +1,78 @@
-
 import React from 'react';
 import { personalInfo } from '../data/index';
-import { GithubIcon, LinkedinIcon } from './icons/index';
+import { GithubIcon, LinkedinIcon, MailIcon, CodeIcon, ArrowUpRightIcon } from './icons/index';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  scrollToTop?: () => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ scrollToTop }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#404040]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between">
-        <div className="flex gap-4 mb-4 sm:mb-0">
+    <footer className="border-t border-slate-800 bg-[#060910] text-slate-400 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        {/* Left: Brand & Title */}
+        <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-1">
+          <div className="flex items-center gap-2 text-white font-bold text-base">
+            <CodeIcon className="w-5 h-5 text-[#00d2b4]" />
+            <span>{personalInfo.name}</span>
+          </div>
+          <p className="text-xs text-slate-500 font-mono">
+            Systems Programmer & Generative AI Developer · Kochi, India
+          </p>
+        </div>
+
+        {/* Center: Tech stack indicator */}
+        <div className="text-xs font-mono text-slate-500 text-center">
+          Built with React 19 · TypeScript · Tailwind CSS · POSIX Architecture
+        </div>
+
+        {/* Right: Social & Back to Top */}
+        <div className="flex items-center gap-4">
           <a
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#FAFAFA]/70 hover:text-[#008080] transition-colors"
+            className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-[#00d2b4] transition-colors"
             aria-label="GitHub Profile"
           >
-            <GithubIcon className="w-6 h-6" />
+            <GithubIcon className="w-4 h-4" />
           </a>
           <a
             href={personalInfo.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#FAFAFA]/70 hover:text-[#008080] transition-colors"
+            className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-[#0ea5e9] transition-colors"
             aria-label="LinkedIn Profile"
           >
-            <LinkedinIcon className="w-6 h-6" />
+            <LinkedinIcon className="w-4 h-4" />
           </a>
+          <a
+            href={`mailto:${personalInfo.email}`}
+            className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-[#6366f1] transition-colors"
+            aria-label="Send Email"
+          >
+            <MailIcon className="w-4 h-4" />
+          </a>
+
+          {scrollToTop && (
+            <button
+              onClick={scrollToTop}
+              className="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs text-slate-300 hover:text-[#00d2b4] transition-colors flex items-center gap-1"
+              aria-label="Scroll to top of page"
+            >
+              <span>Top</span>
+              <ArrowUpRightIcon className="w-3 h-3" />
+            </button>
+          )}
         </div>
-        <p className="text-sm text-[#FAFAFA]/60">
-          © {currentYear} {personalInfo.name}. All rights reserved.
-        </p>
+
+      </div>
+
+      <div className="max-w-7xl mx-auto mt-8 pt-6 border-t border-slate-900 text-center text-[11px] text-slate-600 font-mono">
+        © {currentYear} {personalInfo.name}. All rights reserved.
       </div>
     </footer>
   );

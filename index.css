@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #080c14;
+  color: #f1f5f9;
+  overflow-x: hidden;
+  selection-background-color: #00d2b4;
+  selection-color: #080c14;
+}
+
+::selection {
+  background-color: #00d2b4;
+  color: #080c14;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080c14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 2px solid #080c14;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d2b4;
+}
+
+/* Ambient Radial Glows */
+.bg-mesh-dark {
+  background-color: #080c14;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(0, 210, 180, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(99, 102, 241, 0.04) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 210, 180, 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(14, 165, 233, 0.06) 0px, transparent 50%);
+}
+
+.subtle-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.75) 0%, rgba(15, 23, 42, 0.6) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 210, 180, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(0, 210, 180, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Glowing text and gradient badges */
+.gradient-text-primary {
+  background: linear-gradient(135deg, #00d2b4 0%, #38bdf8 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-teal {
+  background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-teal-ring {
+  box-shadow: 0 0 25px rgba(0, 210, 180, 0.25);
+}
+
+.glow-badge {
+  background: rgba(0, 210, 180, 0.1);
+  border: 1px solid rgba(0, 210, 180, 0.3);
+  color: #5eead4;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   PRINT MEDIA STYLES - Crisp, Professional Multi-Page CV Output
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  /* Completely hide all site chrome, headers, footers, and overlays */
+  header,
+  footer,
+  main,
+  #about,
+  #about-details,
+  #experience,
+  #projects,
+  #skills,
+  #certifications,
+  #contact,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset body and html container flow */
+  html,
+  body,
+  #root,
+  #root > div {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #111827 !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Transform fixed modal into natural document flow */
+  .resume-modal-overlay {
+    position: static !important;
+    inset: auto !important;
+    display: block !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    animation: none !important;
+    z-index: auto !important;
+  }
+
+  .resume-modal-dialog {
+    position: static !important;
+    display: block !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    animation: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .resume-modal-scroll {
+    display: block !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  /* Page break rules */
+  .page-break-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .page-break-after-avoid {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  /* Ensure text contrast on white paper */
+  .print-clean-text {
+    color: #111827 !important;
+  }
+
+  .print-clean-muted {
+    color: #475569 !important;
+  }
+
+  .print-clean-border {
+    border-color: #e2e8f0 !important;
+  }
+
+  .print-clean-bg {
+    background-color: #f8fafc !important;
+  }
+
+  .print-clean-accent {
+    color: #0f766e !important;
+    border-color: #0f766e !important;
+  }
+}
