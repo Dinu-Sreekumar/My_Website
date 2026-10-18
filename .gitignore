@@ -21,4 +21,5 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+# Local raw certificate assets (public web copies in public/certificates)
+/Certificates/

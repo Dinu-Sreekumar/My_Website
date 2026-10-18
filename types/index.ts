@@ -65,4 +65,6 @@ export interface Certification {
   scoreOrDistinction?: string;
   skills?: string[];
   highlight?: boolean;
+  fileUrl?: string;
+  fileType?: 'pdf' | 'image';
 }

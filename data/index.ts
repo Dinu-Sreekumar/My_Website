@@ -124,6 +124,8 @@ export const certificationsData: Certification[] = [
     category: "Generative AI & Data Science",
     scoreOrDistinction: "Distinction: Letter of Recommendation from Co-Founder & Letter of Appreciation",
     highlight: true,
+    fileUrl: "/certificates/mycaptain-genai-competency.pdf",
+    fileType: "pdf",
     skills: ["NLP", "AI Agents", "Automation Tools", "Generative AI Workflow"]
   },
   {
@@ -133,6 +135,8 @@ export const certificationsData: Certification[] = [
     category: "Generative AI & Data Science",
     scoreOrDistinction: "Proctored & Verified Industry Credential",
     highlight: true,
+    fileUrl: "/certificates/data-analytics-certiport.pdf",
+    fileType: "pdf",
     skills: ["Data Analytics", "Statistical Analysis", "Data Manipulation", "EDA"]
   },
   {
@@ -142,6 +146,8 @@ export const certificationsData: Certification[] = [
     category: "Generative AI & Data Science",
     scoreOrDistinction: "Official Microsoft Certified Credential",
     highlight: true,
+    fileUrl: "/certificates/azure-ai-900.pdf",
+    fileType: "pdf",
     skills: ["Azure Machine Learning", "Computer Vision", "NLP", "Conversational AI"]
   },
   {
@@ -151,6 +157,8 @@ export const certificationsData: Certification[] = [
     category: "Generative AI & Data Science",
     scoreOrDistinction: "Elite Certification (Score: 64%)",
     highlight: true,
+    fileUrl: "/certificates/nptel-machine-learning-iitkgp.pdf",
+    fileType: "pdf",
     skills: ["Supervised Learning", "Optimization", "Model Evaluation", "Statistical ML"]
   },
   {
@@ -160,6 +168,8 @@ export const certificationsData: Certification[] = [
     category: "Generative AI & Data Science",
     scoreOrDistinction: "National Course Certification",
     highlight: false,
+    fileUrl: "/certificates/nptel-data-science-iitm.pdf",
+    fileType: "pdf",
     skills: ["Linear Algebra", "Data Preprocessing", "Hypothesis Testing"]
   },
   {
@@ -169,6 +179,8 @@ export const certificationsData: Certification[] = [
     category: "Cloud & DevOps",
     scoreOrDistinction: "Official Red Hat Credential",
     highlight: true,
+    fileUrl: "/certificates/redhat-openshift-do101.pdf",
+    fileType: "pdf",
     skills: ["Kubernetes", "Red Hat OpenShift", "Container Deployments", "Cloud-Native"]
   },
   {
@@ -178,6 +190,8 @@ export const certificationsData: Certification[] = [
     category: "Development",
     scoreOrDistinction: "Certified Front-End Specialist",
     highlight: true,
+    fileUrl: "/certificates/react-ict-academy.pdf",
+    fileType: "pdf",
     skills: ["React.js", "State Architecture", "Modern JavaScript", "Component Patterns"]
   },
   {
@@ -187,6 +201,8 @@ export const certificationsData: Certification[] = [
     category: "Development",
     scoreOrDistinction: "Awarded Letter of Appreciation for Outstanding Performance",
     highlight: false,
+    fileUrl: "/certificates/mycaptain-python-competency.pdf",
+    fileType: "pdf",
     skills: ["Python OOP", "Automation", "Backend Logic", "Scripting"]
   },
   {
@@ -196,6 +212,8 @@ export const certificationsData: Certification[] = [
     category: "Proficiency",
     scoreOrDistinction: "Badge Verified - Maximum Level 10",
     highlight: true,
+    fileUrl: "/certificates/pearson-mepro-english.pdf",
+    fileType: "pdf",
     skills: ["Executive Technical English", "Cross-Functional Communication"]
   },
   {
@@ -204,6 +222,8 @@ export const certificationsData: Certification[] = [
     issuer: "Networkz Systems",
     category: "Cloud & DevOps",
     highlight: false,
+    fileUrl: "/certificates/devops-networkz.jpg",
+    fileType: "image",
     skills: ["CI/CD Pipelines", "Docker Basics", "Cloud Architecture"]
   },
   {
@@ -212,6 +232,8 @@ export const certificationsData: Certification[] = [
     issuer: "Infosys Springboard",
     category: "Cloud & DevOps",
     highlight: false,
+    fileUrl: "/certificates/aws-cloud-native.pdf",
+    fileType: "pdf",
     skills: ["AWS Core Services", "Serverless", "Cloud Infrastructure"]
   },
   {
@@ -220,6 +242,8 @@ export const certificationsData: Certification[] = [
     issuer: "Networkz Systems",
     category: "Productivity & Security",
     highlight: false,
+    fileUrl: "/certificates/cyber-security-networkz.jpg",
+    fileType: "image",
     skills: ["Network Security", "Threat Modeling", "Vulnerability Probing"]
   },
   {
@@ -229,6 +253,8 @@ export const certificationsData: Certification[] = [
     category: "Productivity & Security",
     scoreOrDistinction: "Office 2019 Certified",
     highlight: false,
+    fileUrl: "/certificates/microsoft-excel-associate.pdf",
+    fileType: "pdf",
     skills: ["Advanced Excel", "Formulas & Pivot Tables", "Data Analysis"]
   }
 ];
