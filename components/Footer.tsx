@@ -1,6 +1,6 @@
 import React from 'react';
 import { personalInfo } from '../data/index';
-import { GithubIcon, LinkedinIcon, MailIcon, CodeIcon, ArrowUpRightIcon } from './icons/index';
+import { GithubIcon, LinkedinIcon, MailIcon, ArrowUpRightIcon } from './icons/index';
 
 interface FooterProps {
   scrollToTop?: () => void;
@@ -16,7 +16,9 @@ const Footer: React.FC<FooterProps> = ({ scrollToTop }) => {
         {/* Left: Brand & Title */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-1">
           <div className="flex items-center gap-2 text-white font-bold text-base">
-            <CodeIcon className="w-5 h-5 text-[#00d2b4]" />
+            <span className="w-6 h-6 rounded-lg bg-[#00d2b4]/10 border border-[#00d2b4]/30 text-[#00d2b4] font-black text-xs font-sans flex items-center justify-center select-none">
+              DS
+            </span>
             <span>{personalInfo.name}</span>
           </div>
           <p className="text-xs text-slate-500 font-mono">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../data/index';
-import { CodeIcon, FileTextIcon, GithubIcon, LinkedinIcon } from './icons/index';
+import { FileTextIcon, GithubIcon, LinkedinIcon } from './icons/index';
 
 interface HeaderProps {
   scrollToAbout: () => void;
@@ -63,8 +63,10 @@ const Header: React.FC<HeaderProps> = ({
             aria-label="Scroll to home"
           >
             <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#00d2b4] via-[#0ea5e9] to-[#6366f1] p-[2px] transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,210,180,0.5)]">
-              <div className="w-full h-full bg-[#080c14] rounded-[10px] flex items-center justify-center text-[#00d2b4]">
-                <CodeIcon className="w-5 h-5 text-[#00d2b4]" />
+              <div className="w-full h-full bg-[#080c14] rounded-[10px] flex items-center justify-center">
+                <span className="font-sans font-black text-sm tracking-tight text-[#00d2b4] select-none">
+                  DS
+                </span>
               </div>
             </div>
             <div className="flex flex-col">
