@@ -132,7 +132,7 @@ interface IconProps {
 export const Icon: React.FC<IconProps> = ({ svgString, className }) => {
   return (
     <span
-      className={className}
+      className={className || "w-5 h-5 inline-flex items-center justify-center [&>svg]:w-5 [&>svg]:h-5 [&>svg]:fill-current"}
       dangerouslySetInnerHTML={{ __html: svgString }}
     />
   );
