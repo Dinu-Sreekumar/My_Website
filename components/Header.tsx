@@ -182,31 +182,36 @@ const Header: React.FC<HeaderProps> = ({
         </div>
       </header>
 
-      {/* Floating Left Side Navigation Pill (Vertically Centered on Left Edge) */}
+      {/* Floating Right Side Navigation Pill (Vertically Centered on Right Edge) */}
       <nav
         aria-label="Desktop Side Navigation"
-        className="fixed left-3 xl:left-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col bg-[#080c14]/90 backdrop-blur-2xl border border-slate-800/90 rounded-2xl p-1.5 shadow-2xl shadow-black/80 gap-1 select-none"
+        className="fixed right-3 xl:right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col bg-[#080c14]/90 backdrop-blur-2xl border border-slate-800/90 rounded-2xl p-1.5 shadow-2xl shadow-black/80 gap-1 select-none min-w-[135px]"
       >
+        <div className="px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold border-b border-slate-800/80 mb-0.5 flex items-center justify-between w-full">
+          <span>NAV</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#00d2b4] animate-pulse" />
+        </div>
+
         {navItems.map((item) => {
           const isActive = activeSection === item.id;
           return (
             <button
               key={item.label}
               onClick={item.action}
-              className={`px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 flex items-center gap-2.5 text-left group ${
+              className={`px-3 py-2 rounded-xl text-xs font-semibold transition-all duration-200 flex items-center justify-between gap-3 text-left group ${
                 isActive
                   ? 'bg-[#00d2b4]/15 text-[#00d2b4] font-bold border border-[#00d2b4]/30 shadow-sm shadow-[#00d2b4]/10'
                   : 'text-slate-300 hover:text-white hover:bg-slate-800/70 border border-transparent'
               }`}
             >
+              <span className="tracking-tight">{item.label}</span>
               <span
-                className={`w-1.5 h-1.5 rounded-full transition-all duration-200 ${
+                className={`w-1.5 h-1.5 rounded-full transition-all duration-200 flex-shrink-0 ${
                   isActive
                     ? 'bg-[#00d2b4] scale-125 shadow-[0_0_8px_#00d2b4]'
                     : 'bg-slate-600 group-hover:bg-[#00d2b4]'
                 }`}
               />
-              <span className="tracking-tight">{item.label}</span>
             </button>
           );
         })}
