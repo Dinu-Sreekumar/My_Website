@@ -16,7 +16,7 @@ export const personalInfo = {
     { label: "Built Projects", value: "12+" },
     { label: "Certifications", value: "15+" },
     { label: "BCA Aggregate", value: "8.4 CGPA" },
-    { label: "CLI Target Speed", value: "<5 ms" },
+    { label: "Tech Stack", value: "20+ Tools" },
   ]
 };
 
