@@ -6,8 +6,7 @@ import {
   MailIcon, 
   LocationIcon, 
   SparklesIcon, 
-  FileTextIcon, 
-  TerminalIcon 
+  FileTextIcon 
 } from './icons/index';
 
 interface HeroSectionProps {
@@ -147,11 +146,6 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
                     alt={personalInfo.name}
                     className="w-full h-full object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Floating terminal badge */}
-                  <div className="absolute bottom-3 right-3 bg-slate-950/90 backdrop-blur-md border border-slate-700/80 rounded-lg px-2.5 py-1 flex items-center gap-1.5 shadow-lg">
-                    <TerminalIcon className="w-3.5 h-3.5 text-[#00d2b4]" />
-                    <span className="text-[10px] font-mono font-bold text-slate-200">POSIX / CUSAT</span>
-                  </div>
                 </div>
               </div>
 
