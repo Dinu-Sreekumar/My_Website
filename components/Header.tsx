@@ -56,83 +56,88 @@ const Header: React.FC<HeaderProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <button
-            onClick={scrollToAbout}
-            className="flex items-center gap-3 group text-left transition-transform hover:scale-105"
-            aria-label="Scroll to home"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#00d2b4] via-[#0ea5e9] to-[#6366f1] p-[2px] transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,210,180,0.5)]">
-              <div className="w-full h-full bg-[#080c14] rounded-[10px] flex items-center justify-center">
-                <span className="font-sans font-black text-sm tracking-tight text-[#00d2b4] select-none">
-                  DS
+          {/* Logo & Desktop Nav (Center-Left Aligned) */}
+          <div className="flex items-center gap-6 lg:gap-8">
+            {/* Logo */}
+            <button
+              onClick={scrollToAbout}
+              className="flex items-center gap-3 group text-left transition-transform hover:scale-105 flex-shrink-0"
+              aria-label="Scroll to home"
+            >
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#00d2b4] via-[#0ea5e9] to-[#6366f1] p-[2px] transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,210,180,0.5)]">
+                <div className="w-full h-full bg-[#080c14] rounded-[10px] flex items-center justify-center">
+                  <span className="font-sans font-black text-sm tracking-tight text-[#00d2b4] select-none">
+                    DS
+                  </span>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-extrabold text-base tracking-tight text-white group-hover:text-[#00d2b4] transition-colors">
+                  {personalInfo.name}
+                </span>
+                <span className="text-[11px] font-mono text-slate-400 -mt-0.5">
+                  Systems & AI
                 </span>
               </div>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-base tracking-tight text-white group-hover:text-[#00d2b4] transition-colors">
-                {personalInfo.name}
-              </span>
-              <span className="text-[11px] font-mono text-slate-400 -mt-0.5">
-                Systems & AI
-              </span>
-            </div>
-          </button>
-
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md">
-            {navItems.map((item) => (
-              <button
-                key={item.label}
-                onClick={item.action}
-                className="px-4 py-1.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-full transition-all duration-200"
-              >
-                {item.label}
-              </button>
-            ))}
-          </nav>
-
-          {/* Header Action Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={openResumeModal}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-slate-700/80 hover:border-[#00d2b4]/60 bg-slate-900/40 text-xs font-semibold text-slate-200 hover:text-[#00d2b4] transition-all duration-200"
-            >
-              <FileTextIcon className="w-4 h-4 text-[#00d2b4]" />
-              <span>Resume</span>
             </button>
 
-            <button
-              onClick={scrollToContact}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-gradient-to-r from-[#00d2b4] to-[#0ea5e9] text-xs font-bold text-[#080c14] hover:shadow-[0_0_20px_rgba(0,210,180,0.4)] hover:opacity-95 transition-all duration-200"
-            >
-              Get in Touch
-            </button>
+            {/* Desktop Nav (Center-Left Aligned) */}
+            <nav className="hidden lg:flex items-center space-x-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800/80 backdrop-blur-md">
+              {navItems.map((item) => (
+                <button
+                  key={item.label}
+                  onClick={item.action}
+                  className="px-4 py-1.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80 rounded-full transition-all duration-200"
+                >
+                  {item.label}
+                </button>
+              ))}
+            </nav>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              onClick={openResumeModal}
-              className="p-2 rounded-lg border border-slate-800 text-slate-300 hover:text-[#00d2b4]"
-              aria-label="View Resume"
-            >
-              <FileTextIcon className="w-4 h-4 text-[#00d2b4]" />
-            </button>
+          {/* Right Header Action Buttons & Mobile Menu */}
+          <div className="flex items-center gap-3">
+            <div className="hidden sm:flex items-center gap-3">
+              <button
+                onClick={openResumeModal}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-slate-700/80 hover:border-[#00d2b4]/60 bg-slate-900/40 text-xs font-semibold text-slate-200 hover:text-[#00d2b4] transition-all duration-200"
+              >
+                <FileTextIcon className="w-4 h-4 text-[#00d2b4]" />
+                <span>Resume</span>
+              </button>
 
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors"
-              aria-label="Toggle navigation menu"
-            >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                {mobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
+              <button
+                onClick={scrollToContact}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-gradient-to-r from-[#00d2b4] to-[#0ea5e9] text-xs font-bold text-[#080c14] hover:shadow-[0_0_20px_rgba(0,210,180,0.4)] hover:opacity-95 transition-all duration-200"
+              >
+                Get in Touch
+              </button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="flex items-center gap-2 lg:hidden">
+              <button
+                onClick={openResumeModal}
+                className="p-2 rounded-lg border border-slate-800 text-slate-300 hover:text-[#00d2b4]"
+                aria-label="View Resume"
+              >
+                <FileTextIcon className="w-4 h-4 text-[#00d2b4]" />
+              </button>
+
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors"
+                aria-label="Toggle navigation menu"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {mobileMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
 
