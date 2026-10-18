@@ -26,7 +26,6 @@ export interface Skill {
   name: string;
   icon: string; // SVG string
   category: string;
-  level?: 'Advanced' | 'Proficient' | 'Familiar';
 }
 
 export interface SkillCategory {

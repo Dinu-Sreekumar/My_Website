@@ -17,20 +17,9 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
         <span className="text-xs sm:text-sm font-bold text-white group-hover:text-[#00d2b4] transition-colors truncate">
           {skill.name}
         </span>
-        <div className="flex items-center gap-1.5 mt-0.5">
-          <span className="text-[10px] font-mono text-slate-400">
-            {skill.category}
-          </span>
-          {skill.level && (
-            <span className={`text-[9px] font-mono px-1.5 py-0.2 rounded font-semibold ${
-              skill.level === 'Advanced' 
-                ? 'bg-emerald-500/10 text-emerald-400' 
-                : 'bg-cyan-500/10 text-cyan-400'
-            }`}>
-              {skill.level}
-            </span>
-          )}
-        </div>
+        <span className="text-[10px] font-mono text-slate-400 mt-0.5">
+          {skill.category}
+        </span>
       </div>
     </div>
   );
